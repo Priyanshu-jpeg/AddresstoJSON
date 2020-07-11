@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body>
+    <form>
+      <label>
+        <div>Name</div>
+        <input type="text" name="name" />
+      </label>
+
+      <label>
+        <div>Address Line 1</div>
+        <input type="text" name="address.line1" />
+      </label>
+
+      <label>
+        <div>Address Line 2</div>
+        <input type="text" name="address.line2" />
+      </label>
+
+      <label>
+        <div>Address Area</div>
+        <input type="text" name="address.area" />
+      </label>
+      <label>
+        <div>Pincode</div>
+        <input type="number" name="address.pincode" />
+      </label>
+      <label>
+        <div>City</div>
+        <input type="text" name="address.city" />
+      </label>
+      <label>
+        <div>State</div>
+        <input type="text" name="address.state" />
+      </label>
+      <label>
+        <div>E-mail</div>
+        <input type="text" name="email" />
+      </label>
+      <label>
+        <div>Number</div>
+        <input type="number" name="number" />
+      </label>
+      <label>
+        <div>Website</div>
+        <input type="text" name="website" />
+      </label>
+      <label>
+        <div>Contact</div>
+        <input type="number" name="contact" />
+      </label>
+      <br><br>
+      <button type="submit">Submit</button>
+      <label>
+        <div>Blank Box for Copy & Paste reference</div>
+        <textarea rows="2" cols="20" wrap="hard">
+        </textarea>
+      </label>
+      <pre id="output"></pre>
+    </form>
+
+    <script>
+      document.forms[0].onsubmit = function (e) {
+        e.preventDefault();
+
+        var formData = new FormData(this);
+        var data = {
+          name: formData.get('name'),
+          address: {
+            line1: formData.get('address.line1'),
+            line2: formData.get('address.line2'),
+            area: formData.get('address.area'),
+            pincode: formData.get('address.pincode'),
+            city: formData.get('address.city'),
+            state: formData.get('address.state')
+          },
+          email: formData.get('email'),
+          number: formData.get('number'),
+          website: formData.get('website'),
+          contact: formData.get('contact')
+        }
+
+        document.querySelector('#output').innerHTML = JSON.stringify(data, null, 2);
+      }
+    </script>
+  </body>
+</html>
