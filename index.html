@@ -74,18 +74,19 @@
             line1: formData.get('address.line1'),
             line2: formData.get('address.line2'),
             area: formData.get('address.area'),
-            pincode: formData.get('address.pincode'),
+            pincode: parseInt(formData.get('address.pincode')),
             city: formData.get('address.city'),
             state: formData.get('address.state')
           },
           email: formData.get('email'),
-          number: formData.get('number'),
+          number: parseINT(formData.get('number')),
           website: formData.get('website'),
-          contact: formData.get('contact')
+          contact: parseInt(formData.get('contact'))
         }
 
         document.querySelector('#output').innerHTML = JSON.stringify(data, null, 2);
       }
+      
     </script>
   </body>
 </html>
