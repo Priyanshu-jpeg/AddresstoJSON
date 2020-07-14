@@ -79,7 +79,7 @@
             state: formData.get('address.state')
           },
           email: formData.get('email'),
-          number: parseINT(formData.get('number')),
+          number: parseInt(formData.get('number')),
           website: formData.get('website'),
           contact: parseInt(formData.get('contact'))
         }
