@@ -57,12 +57,16 @@
       <button type="submit">Submit</button>
       <label>
         <div>Blank Box for Copy & Paste reference</div>
-        <textarea rows="2" cols="20" wrap="hard">
+        <textarea rows="2" cols="20" wrap="hard" style="width: 400px;height: 250px">
         </textarea>
       </label>
-      <pre id="output"></pre>
+      <label><div>JSON output:</div>
+      <textarea id="output" wrap="soft" style="width: 400px;height: 250px"></textarea>
+      </label>
+      <br>
+      
     </form>
-
+    <button id="Copy" onclick="copyFunction()">Copy JSON</button>
     <script>
       document.forms[0].onsubmit = function (e) {
         e.preventDefault();
@@ -85,6 +89,14 @@
         }
 
         document.querySelector('#output').innerHTML = JSON.stringify(data, null, 2);
+        
+      }
+      function copyFunction(){
+        var copyText = document.getElementById("output");
+      copyText.select();
+      document.execCommand("copy");
+      alert("Copied the JSON: " + copyText.value);
+
       }
       
     </script>
