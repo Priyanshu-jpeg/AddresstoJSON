@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
+    
     <form>
+      <div style="display: flex; justify-content: space-between">
+        <div style="flex: 1; display: flex; flex-direction: column">
+
       <label>
         <div>Name</div>
         <input type="text" name="name" />
@@ -54,7 +58,9 @@
         <input type="number" name="contact" />
       </label>
       <br><br>
-      <button type="submit">Submit</button>
+      <button style="width: 100px;height: 25px;" type="submit">Submit</button>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column">
       <label>
         <div>Blank Box for Copy & Paste reference</div>
         <textarea rows="2" cols="20" wrap="hard" style="width: 400px;height: 250px">
@@ -64,9 +70,11 @@
       <textarea id="output" wrap="soft" style="width: 400px;height: 250px"></textarea>
       </label>
       <br>
-      
+      <div><button id="Copy" style="width: 100px;height: 25px;" onclick="copyFunction()">Copy JSON</button></div>
+    </div>
+  </div>
     </form>
-    <button id="Copy" onclick="copyFunction()">Copy JSON</button>
+    
     <script>
       document.forms[0].onsubmit = function (e) {
         e.preventDefault();
