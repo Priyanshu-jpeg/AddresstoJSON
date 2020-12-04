@@ -20,7 +20,7 @@
          .input-field label {
         color: #000;
       }
-        ::placeholder{
+      ::placeholder{
           color:white;
         }
 
@@ -34,7 +34,32 @@
         <div class="brand-logo" style="margin-left: 20px;font-size: 18px;"><i class="material-icons">contacts</i>Address to JSON
         </div>
         <ul class="right hide-on-med-and-down">
-          <li><a>About</a></li>
+            <li>
+              <a id="myBtn" class="waves-effect waves-light btn modal-trigger">About</a>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <div class="right hide-on-med-and-down"><a id="close" class="waves-effect waves-light btn modal-trigger">Close</a></div>
+                    <h4 style="color:black">About</h4>
+                    <p style="color:black">Special thanks to Shreevardhan and Sanchita for timely guidance.
+                    </p>
+                    <h6 style="color:black">How to use?</h6>
+                    <p style="color:black">
+                      <span style="color:black">
+                        - Enter the name, address etc on the left side
+                        <br>- Once entered, tap on Submit
+                        <br>- On the right side, JSON will be generated
+                        <br>- Use Expand to view and copy button to copy the JSON
+                        <br>- Blank box can be used to copy the full address for your reference and then paste on the form.
+                        <br>- Autocomplete is disabled due to some UI issues.
+                      </span>
+                    </p>
+                    
+                  </div>              
+              </div>
+           </li>
         </ul>
       </div>
     </nav>
@@ -174,7 +199,22 @@
         var changeIcon=document.getElementById("iconChange");
               changeIcon.innerHTML = "expand_less";
       }
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("myBtn");
+      var closeBtn = document.getElementById("close");
+      btn.onclick = function() {
+        modal.style.display = "block";
+        modal.inDuration(500);
+      }
+      closeBtn.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+      if (event.target == modal) {
+      modal.style.display = "none";
+      }
+  }
     </script>
-     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
 </html>
