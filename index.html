@@ -10,15 +10,16 @@
   </head>
   <style>
     body {
-      background-image: url("https://images.unsplash.com/photo-1519750783826-e2420f4d687f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1534&q=80");
+      background-image: url("https://images.unsplash.com/photo-1587814969489-e5df12e17391?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1512&q=80");
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
             background-color: #464646;
+            
          }
          .input-field label {
-        color: #000;
+        color: rgb(240, 236, 236);
       }
       ::placeholder{
           color:white;
@@ -29,7 +30,7 @@
   <body> 
       <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper" style="background-color:#33A5FF">
+      <div class="nav-wrapper" style="background-color:#ff3333">
         <div class="brand-logo" style="margin-left: 20px;font-size: 18px;"><i class="material-icons">contacts</i>Address to JSON
         </div>
         <ul class="right hide-on-med-and-down">
@@ -41,9 +42,14 @@
                   <!-- Modal content -->
                   <div class="modal-content">
                     <div class="right hide-on-med-and-down"><a id="close" class="waves-effect waves-light btn modal-trigger">Close</a></div>
-                    <h4 style="color:black">About</h4>
+                  <h3 style="color:black">Hi there!
+                  </h3>
+                  <div style="color:black">
+                    <h5>Just wanted to ensure that you are doing well. </h5>
+                    <h5>Stay Safe! This shall pass too!</h5>
+                  </div>
+                    <h4 style="color:black;margin-top: 30px;margin-bottom: 0px;">About</h4>
                     <div style="color:black">Developed by Priyanshu. (priyanshu.gupta9797@gmail.com)
-                    <br>Special thanks to Shreevardhan and Sanchita for timely guidance.
                     </div>
                     <h4 style="color:black">How to use?</h4>
                     <p style="color:black">
@@ -203,6 +209,9 @@
       var modal = document.getElementById("myModal");
       var btn = document.getElementById("myBtn");
       var closeBtn = document.getElementById("close");
+      setTimeout(function displayModal(){
+        modal.style.display = "block";
+      }, 900000);
       btn.onclick = function() {
         modal.style.display = "block";
       }
